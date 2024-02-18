@@ -1,0 +1,3 @@
+/media/briket/data/Git/univer/jetb_iics/CMakeFiles/iics_4.dir
+/media/briket/data/Git/univer/jetb_iics/CMakeFiles/edit_cache.dir
+/media/briket/data/Git/univer/jetb_iics/CMakeFiles/rebuild_cache.dir

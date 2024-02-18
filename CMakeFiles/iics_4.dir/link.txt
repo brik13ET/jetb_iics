@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libiics_4.so -o libiics_4.so CMakeFiles/iics_4.dir/src/Native/impl.c.o 

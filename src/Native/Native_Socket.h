@@ -10,34 +10,34 @@ extern "C" {
 /*
  * Class:     Native_Socket
  * Method:    init
- * Signature: (Ljava/lang/String;)I
+ * Signature: (Ljava/lang/String;)Z
  */
-JNIEXPORT jint JNICALL Java_Native_Socket_init
+JNIEXPORT jboolean JNICALL Java_Native_Socket_init
   (JNIEnv *, jclass, jstring);
 
 /*
  * Class:     Native_Socket
- * Method:    send
+ * Method:    deinit
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_Native_Socket_deinit
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     Native_Socket
+ * Method:    sendTo
  * Signature: ([B)I
  */
-JNIEXPORT jint JNICALL Java_Native_Socket_send
+JNIEXPORT jint JNICALL Java_Native_Socket_sendTo
   (JNIEnv *, jclass, jbyteArray);
 
 /*
  * Class:     Native_Socket
- * Method:    recv
- * Signature: ([BI)I
+ * Method:    recvFrom
+ * Signature: ([BI)[B
  */
-JNIEXPORT jint JNICALL Java_Native_Socket_recv
+JNIEXPORT jbyteArray JNICALL Java_Native_Socket_recvFrom
   (JNIEnv *, jclass, jbyteArray, jint);
-
-/*
- * Class:     Native_Socket
- * Method:    close
- * Signature: ()I
- */
-JNIEXPORT jint JNICALL Java_Native_Socket_close
-  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
