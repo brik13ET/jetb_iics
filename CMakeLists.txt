@@ -5,11 +5,23 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(src/Native)
 
-add_library(iics_4 SHARED
-        src/Native/impl.c)
+find_package(JNI)
 
-include_directories(iics_4
+if (JNI_FOUND)
+    message (STATUS "JNI_INCLUDE_DIRS=${JNI_INCLUDE_DIRS}")
+    message (STATUS "JNI_LIBRARIES=${JNI_LIBRARIES}")
+endif()
+
+
+add_library(iics_4 SHARED
+        src/Native/impl.c
+        )
+
+link_directories(
+        "${JNI_LIBRARIES}"
+)
+
+include_directories(
         src/Native
-        D:/jdks/openjdk-21.0.2/include
-        D:/jdks/openjdk-21.0.2/include/win32
+        "${JNI_INCLUDE_DIRS}"
 )
